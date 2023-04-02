@@ -11,7 +11,7 @@ class AddNewGroup(unittest.TestCase):
     def setUp(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-    
+
     def test_add_new_group(self):
         wd = self.wd
         wd.get("http://localhost/addressbook/")
