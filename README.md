@@ -1,1 +1,1 @@
-# Python_training_B37
+# Repository for Python_training_B37
