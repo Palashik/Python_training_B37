@@ -18,7 +18,7 @@ class AddNewContact(unittest.TestCase):
     def test_add_new_contact(self):
         wd = self.wd
         self.open_home_page(wd)
-        self.login(wd)
+        self.login(wd, "admin", "secret")
         self.create_new_contact(wd, Contact("Masha", "Ivanovna", "Ivanova", "IP Maria", "Main", "Mary27", "Russian Federation",
                                 "738412", "89092154315", "745640", "222351", "maria27@mail.ru", "maria28@mail.ru",
                                 "mariaiv27@mail.ru", "www.masha27.ru", "10", "August", "1999", "12", "June", "2010",
@@ -113,12 +113,12 @@ class AddNewContact(unittest.TestCase):
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
-    def login(self, wd):
+    def login(self, wd, username, password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
 
     def open_home_page(self, wd):
